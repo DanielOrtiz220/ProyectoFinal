@@ -1,0 +1,99 @@
+﻿@model ProyectoFinal.ViewModels.EventosVM
+
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservación</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ProyectoFinal.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Formulario.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Reservación de Salón de Eventos</h1>
+        <form asp-controller="Acceso" asp-action="Formulario" method="post" onsubmit="return handleSubmit(event)">
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label>Nombre Completo <span class="required">*</span></label>
+                        <input class="form-control mb-3" type="text" placeholder="Nombre" required asp-for="Nombre_Completo" />
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label>Correo Electrónico <span class="required">*</span></label>
+                        <input class="form-control mb-3" type="email" placeholder="Correo" required asp-for="Correo" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label>Teléfono <span class="required">*</span></label>
+                        <input type="tel" id="telefono" name="telefono" asp-for="Telefono">
+                        <div id="telefonoError" class="error-message">El teléfono debe tener exactamente 10 dígitos</div>
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label>Fecha del Evento <span class="required">*</span></label>
+                        <input type="date" placeholder="Fecha" required asp-for="DateOnly" />
+                        <div id="fechaError" class="error-message">La fecha debe ser al menos 2 días después de hoy</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label>Número de Invitados <span class="required">*</span></label>
+                        <input type="number" placeholder="number" required asp-for="CantidadInvitados" />
+                        <div id="invitadosError" class="error-message">El número de invitados debe ser menor a 200</div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button class="btn btn-primary "type="submit" id="submitBtn">Enviar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+<script>
+    // Establecer fecha mínima (2 días después de hoy)
+    const fechaInput = document.getElementById('fecha');
+    const hoy = new Date();
+    const dosDiasDespues = new Date(hoy);
+    dosDiasDespues.setDate(hoy.getDate() + 2);
+    fechaInput.min = dosDiasDespues.toISOString().split('T')[0];
+
+    // Validación de teléfono
+    const telefonoInput = document.getElementById('telefono');
+    telefonoInput.addEventListener('input', function () {
+        const telefonoError = document.getElementById('telefonoError');
+        if (this.value.length !== 10) {
+            telefonoError.style.display = 'block';
+        } else {
+            telefonoError.style.display = 'none';
+        }
+        // Permitir solo números
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+</script>

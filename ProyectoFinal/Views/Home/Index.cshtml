@@ -1,0 +1,74 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProyectoFinal</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ProyectoFinal.styles.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Events | Salón de Eventos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" rider="carousel">
+        <div class="carousel-inner">
+
+            @*Texto sobre el carrusel*@
+            <div class="carousel-overlay">
+                <h1 class="display-5">Bienvenido a Nuestro Sitio</h1>
+                <p class="col-md-7 fs-4">
+                    Eleve sus ocasiones con nuestros excepcionales lugares y servicios.<br /> ¡Reserva tu plaza ahora!
+                </p>
+            </div>
+
+            <div class="carousel-item active" style="background-image: url('@Url.Content("~/img/Salon1.jpg")');"></div>
+            <div class="carousel-item" style="background-image: url('@Url.Content("~/img/salon2.jpg")');"></div>
+            <div class="carousel-item" style="background-image: url('@Url.Content("~/img/psalon2.jpg")');"></div>
+        </div>
+    </div>
+
+    <section class="section" id="servicios">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Nuestros Servicios</h2>
+        <div class="services">
+            <div class="service-card">
+                <i class="fas fa-glass-cheers service-icon"></i>
+                <h3>Bodas</h3>
+                <p>Celebra el día más especial de tu vida en un ambiente mágico y elegante.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-birthday-cake service-icon"></i>
+                <h3>Cumpleaños</h3>
+                <p>Festeja otro año de vida con una celebración única y memorable.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-briefcase service-icon"></i>
+                <h3>Eventos Corporativos</h3>
+                <p>El espacio ideal para tus reuniones empresariales y conferencias.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="galeria" style="background: var(--secondary); color: white;">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Galería</h2>
+        <div class="gallery">
+            <img alt="Elegant wedding reception with white decor and flowers" src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600" width="600" height="400">
+            <img alt="Corporate event setup with modern decoration" src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600" width="600" height="400">
+            <img alt="Birthday party decoration with balloons and lights" src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600" width="600" height="400">
+            <img alt="XV years" src="~/img/salon5.jpg" width="600" height="400" />
+            <img alt="XV years" src="~/img/salon6.jpg" width="600" height="400" />
+            <img alt="XV years" src="~/img/salon7.jpg" width="600" height="400" />
+        </div>
+    </section>
+
+
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        
+</body>
+</html>

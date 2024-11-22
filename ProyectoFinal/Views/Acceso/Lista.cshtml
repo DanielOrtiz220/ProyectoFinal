@@ -1,0 +1,69 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservación</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/ProyectoFinal.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Formulario.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+@model List<ProyectoFinal.Models.Eventos>;
+<div class="row">
+    <div class="col-sm-8 offset-sm-2">
+        <h2> Lista de Eventos</h2>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th> Id </th>
+                    <th> Nombre </th>
+                    <th> Correo </th>
+                    <th> Telefono </th>
+                    <th> Fecha Cita </th>
+                    <th> Cantidad de Invitados </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Nombre_Completo</td>
+                        <td>@item.Correo</td>
+                        <td>@item.Telefono</td>
+                        <td>@item.DateOnly.ToString("dd/MM/yyyy")</td>
+                        <td>@item.CantidadInvitados</td>                    
+                        <td>
+                        </td>
+                    </tr>
+                } 
+             </tbody>
+        </table>
+    </div>
+</div>
+</html>
+
+
+<script>
+    function confirmar() {
+        return confirm("Esta seguro de eliminar el Evento?")
+    }
+</script>

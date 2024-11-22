@@ -1,0 +1,48 @@
+﻿@model ProyectoFinal.ViewModels.LoginVM
+
+
+<head>
+    <title>
+        Login
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ProyectoFinal.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Registro.Login.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<div class="login-container">
+    <div class="logo">
+        <img src="~/img/logo cadillac.png" alt="Logo">
+    </div>
+    <h1>Iniciar Sesión</h1>
+    <form asp-controller="Acceso" asp-action="Login" method="post" id="registForm" onsubmit="return handleSubmit(event)">
+        <div class="cajas-group">
+          <input class="form-control mb-3" type="email" placeholder="Correo" required asp-for="correo" />
+          <input class="form-control mb-3" type="password" placeholder="Contraseña" required asp-for="clave" />
+        </div>
+        <div class="remember-me">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Recordarme</label>
+        </div>
+        <div>
+            <button type="submit" id="submitBtn">Iniciar Sesión</button>
+        </div>
+
+        @if (ViewData["Mensaje"] != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewData["Mensaje"]
+            </div>
+        }
+        No tienes una cuenta? <a asp-controller="Acceso" asp-action="Registro">Registrate Ya!</a>
+    </form>
+</div>

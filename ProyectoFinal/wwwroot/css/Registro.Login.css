@@ -1,0 +1,230 @@
+﻿body 
+{
+}
+
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #6C63FF, #3F3D9D);
+}
+
+.login-container {
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+    background: white;
+    border-left: 100px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+    .logo img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.cajas-group. {
+    margin-bottom: 1rem;
+}
+
+.cajas-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #666;
+    }
+
+.cajas-group input {
+     width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    }
+
+.cajas-group input:focus {
+    border-color: #6C63FF;
+    outline: none;
+}
+
+.error-message {
+    color: #ff3333;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background: #6C63FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+    button:hover {
+        background: #5652CC;
+    }
+
+    button:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+    }
+
+.remember-me {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.links {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+    .links a {
+        color: #6C63FF;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255,255,255,0.95);
+    z-index: 100;
+    background-color: #2d1910;
+}
+
+.navbar.scrolled {
+    background-color: #2c1810 !important;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+    color: black;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+    nav a:hover {
+        color: black;
+    }
+
+.imgcustom {
+    width: 100px;
+    height: 80px;
+}
+
+.section {
+    padding: 8rem 2rem;
+    margin: 0px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.gallery {
+    columns: 3;
+    column-gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+    .gallery img {
+        width: 100%;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+    }
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+          

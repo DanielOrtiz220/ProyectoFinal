@@ -1,0 +1,65 @@
+﻿<div class="container">
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="javascript:void(0)" id="scroll-to-top"><img class="imgcustom" src="~/img/logo cadillac.png" /></a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeria">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Login", "Acceso")">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+    
+<body>
+@RenderBody()
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.querySelector('#mainNavbar');
+
+            
+            if (window.location.pathname.includes("Registro") || window.location.pathname.includes("Login") || window.location.pathname.includes("Lista") || window.location.pathname.includes("Formulario")) {
+                if (navbar) {
+                    navbar.style.display = 'none'; 
+                }
+            } else {
+                
+                function updateNavbar() {
+                    if (window.scrollY > 500) {
+                        navbar.classList.add('scrolled'); 
+                    } else {
+                        navbar.classList.remove('scrolled'); 
+                    }
+                }
+
+                updateNavbar(); 
+                window.addEventListener('scroll', updateNavbar); 
+            }
+        });
+    </script>
+
+    <script>
+        document.getElementById("scroll-to-top").addEventListener("click", function(event) {
+            event.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });        
+    </script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
